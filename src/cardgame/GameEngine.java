@@ -23,9 +23,11 @@ public class GameEngine {
     }
     
     public static boolean restart(){
+        boolean again = false;
+        try{
         Scanner input = new Scanner(System.in);
         System.out.print("Do you want to play again?\n 1 - Yes \n 2 - No \n Your choice: ");
-        boolean again = false;
+        
         int answer = input.nextInt();
         switch(answer){
             case 1:
@@ -41,8 +43,13 @@ public class GameEngine {
                 again = false;
                 break;
         }
+        
+        }catch(Exception e){
+            System.out.println("exception error");
+        }
         return again;
     }
+        
 
     private static void finalise(){
         int playerScore = countTheValue(p1.getCards());
@@ -180,8 +187,10 @@ public class GameEngine {
     }
 
     public static void play(){
+       
         System.out.println("Starting the new round...");
         
+      
         //ROUND 1
         System.out.println("=======================================");
         Card dealerCard = CardDeck.generateCard();
@@ -252,4 +261,6 @@ public class GameEngine {
         System.out.println("=======================================");
         finalise();
     }
+    
+      
 }

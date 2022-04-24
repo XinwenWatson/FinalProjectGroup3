@@ -7,7 +7,7 @@ public class Dealer {
     private static Dealer onlyObject = null;
     private ArrayList<Card> cards = new ArrayList<Card>();
 
-    private Dealer(){
+    public Dealer(){
 
     }
 
